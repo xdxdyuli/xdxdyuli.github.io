@@ -1,0 +1,1188 @@
+<!DOCTYPE html>
+
+<html>
+<head> 
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+<meta name="renderer" content="webkit|ie-comp|ie-stand">
+<title>学信档案</title>
+<meta name="keywords" content="学信档案，高等教育信息，学籍学历，图片校对">
+<meta name="description" content="“学信档案”是中国高等教育学生信息网（简称“学信网”）各类学生个人信息档案的总称，涉及全国高等教育学生信息数据库中各类学生的学籍、学历、招生录取、助学贷款等信息。">
+<meta http-equiv="x-dns-prefetch-control" content="on">
+<meta name="format-detection" content="telephone=no, email=no">
+<link rel="dns-prefetch" href="//t1.chei.com.cn?v=1531374966451">
+<link rel="dns-prefetch" href="//t2.chei.com.cn?v=1531374966451">
+<link rel="dns-prefetch" href="//t3.chei.com.cn?v=1531374966451">
+<link rel="dns-prefetch" href="//t4.chei.com.cn?v=1531374966451">
+<link rel="dns-prefetch" href="//ssl.google-analytics.com?v=1531374966451">
+<link rel="icon" href="https://t1.chei.com.cn/archive/favicon.ico" type="image/x-icon" />
+<!--新的样式-->
+<link rel="stylesheet" href='https://t1.chei.com.cn/common/bootstrap3.3.5/css/bootstrap.min.css' />
+<link rel="stylesheet" href='https://t1.chei.com.cn/common/ch/iconfont.css' />
+<link rel="stylesheet" href='https://t4.chei.com.cn/archive/css/custom/archive.min.css?20200723' />
+<link href="css/style.css" type="text/css" rel="stylesheet" media="all"/>
+
+<script type="text/javascript" src='https://t1.chei.com.cn/common/jquery/1.9.1/jquery.min.js'></script>
+<script type="text/javascript" src='https://t1.chei.com.cn/common/zhuge/zhuge-1.0.0.js'></script>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-100524-5"></script>
+<script>
+// 放在ga.jsp 中
+function gaTrackerOutboundLink(ele,eventCategory,eventAction,eventLabel){
+    gtag('event', eventAction, {
+      'event_category': eventCategory,
+      'event_label': eventLabel
+    });
+    return true;
+}
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'UA-100524-5', {'sample_rate': 1});
+
+// 诸葛统计代码
+var zhugeFun ={
+    init:function(flag){
+        var OpenautoTrack = typeof flag != 'undefined' ? flag : false; //是否开启全埋点
+        if(!flag){
+           var _url = window.location.href;
+           if(_url.indexOf('/archive/index')>-1 || _url.indexOf('archive/wap/index')>-1){//pc、wap首页
+                OpenautoTrack = true;
+            }
+        }            
+        window.zhuge.load('0d76434d9bb94abfaa16e1d5a3d82b52', { //配置应用的AppKey
+            autoTrack: OpenautoTrack
+        });
+    },
+    votePv:function(name,from,type){
+        // 问卷浏览量
+        // name string  问卷名称
+        // from string 来源
+        // type string 类型，就业还是学职
+        zhuge.track('浏览问卷', {
+           '问卷名称': name,
+           '访问来源': from,
+           '问卷类型': type
+        });
+    },
+    voteClick:function(name,from,type){
+        // 问卷点击量
+        // name string  问卷名称
+        // from string 来源
+        // type string 类型，就业还是学职
+        zhuge.track('点击问卷', {
+           '问卷名称': name,
+           '访问来源': from,
+           '问卷类型': type
+        });
+    },
+    voteSubmit:function(name,from,type,time){
+        // 问卷提交量
+        // name string  问卷名称
+        // from string 来源
+        // type string 类型，就业还是学职
+        // time num 完成问卷用时
+        zhuge.track('提交问卷', {
+           '问卷名称': name,
+           '访问来源': from,
+           '问卷类型': type,
+           '问卷用时': time
+        });
+    },
+    voteClickSubmit:function(name,from,type){
+        // 问卷前台校验通过，还未传后台前的提交量
+        // name string  问卷名称
+        // from string 来源
+        // type string 类型，就业还是学职
+        zhuge.track('点提交按钮', {
+           '问卷名称': name,
+           '访问来源': from,
+           '问卷类型': type
+        });
+    },
+    //去往新职业
+    goNcss:function(from,to){
+        zhuge.track('点击新职业', {
+           '来源': from,
+           '去向': to
+        });
+    },
+    //去往学职
+    goXz:function(from,to){
+        zhuge.track('点击学职', {
+           '来源': from,
+           '去向': to
+        });
+    },
+    pagePv:function(name,platform,hasData){//各类页面访问量
+        if(typeof hasData != 'undefined'){
+            zhuge.track('主要页面访问量',{
+                '名称':name,
+                '设备信息':platform,
+                '是否有数据':hasData
+            });
+        }else{
+            zhuge.track('主要页面访问量', {'名称':name,'设备信息':platform});
+        }           
+    },
+    gdjyToZxyz:function(type,platform){//从高等教育点击到在线验证
+        zhuge.track('从高等教育点击到在线验证',{
+            '类型':type,
+            '设备信息':platform
+        });
+    },
+    xjxlMydClick:function(type){//学籍学历右侧的满意度推荐按钮点击情况
+        zhuge.track('从高等教育点击满意度',{
+            '类型':type
+        });
+    },
+    byqxClick:function(platform){//毕业去向提交成功
+        zhuge.track('毕业去向提交成功',{
+            '设备信息':platform
+        });
+    },
+    zxysSqClick:function(type){//在线验证点击申请
+        zhuge.track('申请在线验证报告',{
+            '类型':type //学籍、学历
+        });
+    },
+    gjhzSendStep:function(step){//国际合作的发送报告流程
+        switch(step){
+            case '1':zhuge.track('国际合作发送报告-选择机构和大学');break;
+            case '2':zhuge.track('国际合作发送报告-选择报告');break;
+            case '3':zhuge.track('国际合作发送报告-确认报告');break;
+            case '4':zhuge.track('国际合作发送报告-点击发送');break;
+        }
+    },
+    dctpIndexClick:function(name,platform){
+        zhuge.track('调查投票首页点击事件',{
+            '点击区域':name, //学籍、学历
+            '设备信息':platform
+        });
+    }
+}
+</script>
+</head>
+<body>
+    <style type="text/css">
+    .webuploader-container .webuploader-pick{
+        position: relative;
+        display: inline-block;
+        cursor: pointer;
+        color: #fff;
+        text-align: center;
+         border-radius:0; 
+        overflow: hidden;
+        padding: 0 30px;
+        background: #25b887;
+    }
+    .pdf-show{
+        float: left;
+        display:inline-block; 
+        border: 1px solid #ccc;
+        padding:0 10px;
+        width:144px;
+        height: 32px;
+        margin-right:5px;        
+    }
+    .pdf-show .item{
+        display:inline-block;
+        width:144px;  
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+    }
+    .ctl-btn{
+        vertical-align: 12px;
+    }
+    .main{
+        position: relative;
+    }
+    .ch-robot{
+        position: absolute;
+        right: -60px;
+        top: 0;
+        display: block;
+        width: 50px;
+        height: 77px;
+        margin-bottom: 10px;
+        background: url('https://t3.chei.com.cn/archive/images/common/jqr.png') no-repeat;
+    }
+    .ch-robot:hover{
+        background-position: -52px 0;
+        text-decoration: none;
+    }
+</style>
+<script type="text/javascript">
+        zhugeFun.init(); 
+    $(function(){
+        var identityTag = '1a32326f77479f351bc79e3955492849';
+        if (identityTag!='Anonymous') {
+            zhuge.identify(identityTag);
+        }
+    })    
+</script>
+    <div class="outer-layer">
+        <div class="outer-layer-content">
+            
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="https://t1.chei.com.cn/common/css/animate.css"> 
+<img src="https://t1.chei.com.cn/common/wap/images/share_xxda.jpg?v=1477569249589" width='0' height='0' style='position: absolute;top:-100px;left: 0'/>
+<style type="text/css">
+    .header-nav .header-nav-bg{
+        height: 220px;
+    }
+    .header-nav dd{
+        height: 212px;
+    }
+</style>
+<div class="header">
+    <div class="width1180 clearfix">
+        <div class="logo"><a href="/archive/index.jsp" target="_parent" class="home"></a></div>
+        <div class='homePage-nav'>
+            <a href="/archive/index.action?trnd=29812727067850083961300112949512">首页</a>
+        </div>
+        <div id="nav-first" class='header-nav'>
+            <dl id="gdjy-nav">    
+                <dt>高等教育信息<span class="sanjiao"></span></dt>
+                <dd style='display: none'></dd>
+            </dl>
+            <dl id="bab-nav">    
+                <dt>在线验证报告<span class="sanjiao"></span></dt>
+                <dd style='display: none'></dd>
+            </dl>
+            <dl id="rzbg-nav">    
+                <dt>学历认证与成绩验证<span class="sanjiao"></span></dt>
+                <dd style='display: none'></dd>
+            </dl>
+            <dl id="gjhz-nav">    
+                <dt>国际合作申请<span class="sanjiao"></span></dt>
+                <dd style='display: none'></dd>
+            </dl>
+            <dl>    
+                <dt id="vote-nav">调查/投票<span class="sanjiao" style="left:46px;"></span></dt>
+                <dd style='display: none'></dd>
+            </dl>
+            <dl>    
+                <dt id="xz-nav"><a href="http://xz.chsi.com.cn/survey/index.action" class="xz-link" target="_blank">职业测评</a></dt>
+                <dd style='display: none'></dd>
+            </dl>
+            <dl>    
+                <dt id="ncss-nav"><a href="https://www.ncss.cn/" onmousedown="gaTrackerOutboundLink(this,'ncssindex', 'click', 'frommenu');zhugeFun.goNcss('frommenu','ncssindex')" target="_blank"  class="jy-link">就业</a></dt>
+                <dd style='display: none'></dd>
+            </dl>
+            <div class="header-nav-bg" style="display:none;">&nbsp;</div>
+        </div>
+        
+        <div class="nav-userinfo">
+            
+                <div class=" btn-group">
+                    <div class="user dropdown-toggle" data-toggle="dropdown"><i class="iconfont" title="个人中心">&#xe647;</i>个人中心<span class="caret"></span>
+                    </div>
+                    <ul class="dropdown-menu" role="menu">
+                      <li><a href="https://account.chsi.com.cn/account/account!show" target="_blank" ><i class="iconfont" title="账号">&#xe645;</i>账号</a>
+                      </li>
+                      
+                      <li><a href='https://account.chsi.com.cn/passport/logout?service=https://my.chsi.com.cn/archive/index.jsp'><i class="iconfont" title="退出">&#xe695;</i>退出</a></li>
+                    </ul>
+                </div>
+            
+            
+        </div>
+    </div>
+</div>
+<div  class="sub_nav"> 
+    <div id="nav-second" class="width1180 clearfix">                                
+        <ul class="sub_nav_mian" style='display:none'>
+            <li>学籍信息/图像校对</li>
+            <li>学历信息</li>
+            <li>考研信息</li>
+            <li>毕业去向</li>
+        </ul>
+        <ul class="sub_nav_mian" style='display:none'>
+            <li>首页</li>
+            <li>高等学籍</li>
+            <li>高等学历</li>
+        </ul>
+        <ul class="sub_nav_mian" style='display:none'>
+            <li>首页</li>
+            <li>绑定报告</li>
+        </ul>
+        <ul class="sub_nav_mian" style='display:none'>
+            <li>首页</li>
+            <li>传输费用</li>
+            <li>英文翻译</li>
+        </ul>
+        <ul class="sub_nav_mian" style='display:none'>
+            <li>首页</li>
+            <li>跟踪调查</li>
+            <li onmousedown="gaTrackerOutboundLink(this,'jygz', 'click', 'survey_jygz_menu')">就业跟踪</li>
+            <li onmousedown="gaTrackerOutboundLink(this,'zydc', 'click', 'survey_zydc_menu')">职业调查</li>
+            <li>专业推荐</li>
+            <li>专业满意度</li>
+            <li>院校满意度</li>
+        </ul> 
+        <ul class="sub_nav_mian" style='display:none'>
+            <li><a href="http://xz.chsi.com.cn/home.action" onmousedown="zhugeFun.goXz('frommenu','xzIndex')" target="_blank">首页</a></li>
+            <li><a href="http://xz.chsi.com.cn/speciality/index.action" onmousedown="zhugeFun.goXz('frommenu','xzZybk')" target="_blank">专业百科</a></li>
+            <li><a href="http://xz.chsi.com.cn/speciality/index.action" onmousedown="zhugeFun.goXz('frommenu','xzKcpj')" target="_blank">课程评价</a></li>
+            <li><a href="http://xz.chsi.com.cn/survey/index.action"  onmousedown="zhugeFun.goXz('frommenu','xzZycp')" target="_blank">职业测评</a></li>
+            <li><a href="http://xz.chsi.com.cn/occupation/index.action" onmousedown="zhugeFun.goXz('frommenu','xzZhiybk')" target="_blank">职业百科</a></li>
+        </ul>
+        <ul class="sub_nav_mian" style='display:none'>
+            <li><a href="https://www.ncss.cn/" onmousedown="gaTrackerOutboundLink(this,'ncssindex', 'click', 'frommenu');zhugeFun.goNcss('frommenu','ncssindex')" target="_blank">首页</a></li>
+            <li><a href="https://job.ncss.cn/student/jobs/index.html" onmousedown="gaTrackerOutboundLink(this,'ncsszw', 'click', 'frommenu');zhugeFun.goNcss('frommenu','ncsszw')" target="_blank">职位</a></li>
+            <li><a href="https://job.ncss.cn/student/company/index.html" onmousedown="gaTrackerOutboundLink(this,'ncssqy', 'click', 'frommenu');zhugeFun.goNcss('frommenu','ncssqy')" target="_blank">企业</a></li>
+            <li><a href="https://job.ncss.cn/student/jobfair/index.html" onmousedown="gaTrackerOutboundLink(this,'ncsszph', 'click', 'frommenu');zhugeFun.goNcss('frommenu','ncsszph')" target="_blank">招聘会</a></li>
+        </ul>
+    </div>
+</div>
+
+<script>
+var SpathMy = 'https://my.chsi.com.cn/archive/';
+var SpathGaoKao = 'https://my.chsi.com.cn/zyzsk/';
+</script>
+<script src='https://t1.chei.com.cn/archive/js/common/header-menu-1.0.9.js'></script>
+
+
+            <div class='main'>
+                <a href="//kl.chsi.com.cn/robot/index.action?system=my" target="_blank" class="ch-robot"></a>
+                
+
+
+
+
+
+
+
+<script src='https://t1.chei.com.cn/archive/js/archive/photoquery-2.0.0.js'></script>
+<script src="https://t4.chei.com.cn/common/plugins/jqueryraty/jquery.raty.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <style>
+        .vote_part.vote_bg_cyfw {
+            background-image: url('https://t4.chei.com.cn/archive/images/xj/vote-cyfwbg.png');
+        }
+    </style>
+    <div id="surveyPicInfo" class="vote_part">
+        
+        
+            <a href="#ptgxbysjyzk_survey"></a>
+        
+    </div>
+    <script src='https://t1.chei.com.cn/common/js/vue/2.5.15/vue.min.js'></script>
+    <script src='https://t1.chei.com.cn/common/js/iview/2.5.16/iview.min.js'></script>
+    <script type="text/javascript">
+        var position = 'pc_xj';
+        var qqFrom = "";
+        $(function () {
+            if( null != position && position != undefined ) {
+                initCanShowSurveyType();
+            }
+        });
+        function initCanShowSurveyType() {
+            $.ajax({
+                url : 'https://my.chsi.com.cn/archive/survey/zswj/show.action',
+                method : 'POST',
+                data : {
+                    position : position
+                },
+                dataType: "json",
+                success : function (resultData) {
+                    if ( resultData.status == 0 && resultData.result!=null) {
+                        var result = resultData.result;
+                        showSurveyInfo(result.id,result.type,resultData.result.showTc,result.showZyxq,result.zyxqNumber);
+                    }
+                }
+            });
+        }
+
+        /**
+         * 显示调查问卷
+         */
+        function showSurveyInfo(id,type,showTc,showZyxq,zyxqNumber) {
+            if ( null == type || type == undefined || null == id || id == undefined) {
+                return ;
+            }
+            var from = getSurveyFrom(type,showTc);
+            if ( type == "gxbysgz" ) {
+                gxbysgzSurvey(id,showTc,from);
+            }
+            if ( type == "lxjyzk" ) {
+                ptgxjygzSurvey(id,showTc,from);
+            }
+            if ( type == "xyxxzk" ) {
+                ptgxxyxxzkSurvey(id,showTc,from);
+            }
+            if ( type == "zyfz" ) {
+                ptgxbyszyfzSurvey(id,showTc,from);
+            }
+            if ( type == "xzcp" ) {
+                ptgxbysjyzkSurvey(id,showTc,from,showZyxq,zyxqNumber);
+            }
+            if ( type == "xsgz" ) {
+                gxxsgzSurvey(id,showTc,from,showZyxq,zyxqNumber);
+            }
+            if ( type == "jycyfw" ) {
+                ptgxjycyfwSurvey(id,showTc, from);
+            }
+            if ( type == "jyqw" ) {
+                ptgxbysjyqwSurvey(id,showTc,from);
+            }
+        }
+
+        /**
+         * 就业期望调查问卷
+         *
+         * @param id     符合问卷条件的档案ID
+         * @param showTc 是否显示弹层
+         * @param from   请求来源
+         */
+        function ptgxbysjyqwSurvey(id,showTc,from) {
+            $.ajax({
+                url:'/archive/survey/jyqw/show.action',
+                type:'POST',
+                data:{
+                    id:id,
+                    from:from
+                },
+                success:function(dataValue) {
+                    if ( showTc ) {
+                        layer.open({
+                            type: 1,
+                            title: false,
+                            area: ['1000px', '606px'],
+                            closeBtn: false,
+                            shadeClose: false,
+                            skin: 'zydc_layer',
+                            content: '<div id="vote_jyqw_survey" data-id="'+id+'">'+dataValue+'</div>'
+                        });
+                    }else{
+                        $("#surveyPicInfo").show()
+                            .children('a').eq(0).text('2021届高校毕业生就业期望调查');
+                        $('#ptgxbysjyzk_survey').html(dataValue).show();
+                    }
+                }
+            });
+        }
+
+        function ptgxjycyfwSurvey(id, showTc, from) {
+            $.ajax({
+                url:'/archive/survey/cyfw/show.action',
+                type:'get',
+                data:{
+                    id:id,
+                    from:from
+                },
+                success:function(dataValue) {
+                    if (showTc) {
+                        $("#surveyPicInfo").hide();
+                        layer.open({
+                            type: 1,
+                            title: false,
+                            area: ['1000px', '650px'],
+                            closeBtn: false,
+                            shadeClose: false,
+                            skin: 'zydc_layer',
+                            content: '<div id="vote_cfw_survey" data-id="'+id+'">'+dataValue+'</div>'
+                        });
+                        if(position =='pc_xlbab'){
+                            $("#surveyPicInfo").addClass('vote_bg_cyfw').show()
+                                .children('a').eq(0).text('2020届高校毕业生就业创业服务调查').attr('href','https://my.chsi.com.cn/archive/survey/cyfw/display.action?from=archive-xlbab-banner');
+                        }
+                    }else{
+                        $("#surveyPicInfo").addClass('vote_bg_cyfw').show()
+                            .children('a').eq(0).text('2020届高校毕业生就业创业服务调查');
+                        $('#ptgxbysjyzk_survey').html(dataValue);
+                    }
+                }
+            });
+        }
+
+        function gxxsgzSurvey(id,showTc,from) {
+            $.ajax({
+                url:'/archive/survey/xsgz/index.action',
+                type:'POST',
+                dataType: 'html',
+                data:{
+                    from:from,
+                    id:id
+                },
+                success:function(dataValue) {
+                    if(dataValue.indexOf('res_err_layout')>-1){ //已提交或者错误页面
+                        return false;
+                    }
+                    if (showTc) {
+                        $("#surveyPicInfo").hide();
+                        layer.open({
+                            type: 1,
+                            title: false,
+                            area: ['1000px', '650px'],
+                            closeBtn: false,
+                            shadeClose: false,
+                            skin: 'zydc_layer',
+                            content: '<div id="vote_xsgz_survey" data-id="'+id+'">'+dataValue+'</div>'
+                        });
+                        if(position =='pc_xlbab'){
+                            $("#surveyPicInfo").addClass('vote_bg_lxhjy').show()
+                                .children('a').eq(0).attr('href','https://my.chsi.com.cn/archive/survey/xsgz/show.action?from=archive-xlbab-banner').text('高校学生跟踪调查问卷');
+                        }
+                    }else{
+                        $("#surveyPicInfo").addClass('vote_bg_lxhjy').show()
+                            .children('a').eq(0).text('高校学生跟踪调查问卷');
+                        $('#ptgxbysjyzk_survey').html(dataValue);
+
+                    }
+                }
+            });
+        }
+
+        function getSurveyFrom(type,showTc) {
+            if ( position == "pc_main" && type == "xzcp" ) {
+                return "archvie_index_lay";
+            }
+            if ( position == "pc_main" && type != "xzcp" ) {
+                return showTc ? "archive-main-tc" : "archive-main";
+            }
+            if ( position == "pc_xj" && type != "xzcp" ) {
+                return type == "xyxxzk" ? "A" : "archive-xjxx";
+            }
+            if ( position == "pc_xj" && type == "xzcp" ) {
+                return "archive_xj";
+            }
+            if ( position == "pc_xl" ) {
+                return type == "xzcp" ? "archive_xl" : "archive-xlxx";
+            }
+            if ( position == "pc_xlbab" && type == "xzcp" ) {
+                if ( "" == qqFrom || null == qqFrom ) {
+                    return 'archive';
+                }
+                return qqFrom == "chsi-xlbgcx" ? "archive_xlbg_dl" : qqFrom;
+            }
+            if ( position == "pc_xlbab" && type != "xzcp" ) {
+                return ("" == qqFrom || null == qqFrom) ? 'archive-xlbabtc' : qqFrom;
+            }
+        }
+
+        /**
+         * 学职测评问卷
+         *
+         * @param id     符合问卷条件的档案ID
+         * @param showTc 是否显示弹层
+         * @param from   请求来源
+         */
+        function ptgxbysjyzkSurvey(id,showTc,from,showZyxq,zyxqNumber) {
+            $.ajax({
+                url:'/archive/survey/xzpt/sph.action',
+                type:'POST',
+                dataType: 'html',
+                data:{
+                    from:from,
+                    xlId:id
+                },
+                success:function(dataValue) {
+                    if ( showTc ) {
+                        layer.open({
+                            type: 1,
+                            title: false,
+                            id:"lxjySurveyInfo",
+                            area: ['1000px', '606px'],
+                            closeBtn: false,
+                            shadeClose: false,
+                            skin: 'zydc_layer',
+                            content: '<div id="vote_xz_survey" data-id="'+id+'">'+dataValue+'</div>'
+                        });
+                        if(position =='pc_xlbab' && showZyxq){
+                            $("#surveyPicInfo").removeClass('vote_part').html('<a href="http://xz.chsi.com.cn/cp/xq/start.action" target="_blank" class="zxyz_wjdcrl" >已有<span>'+zyxqNumber+'人</span>参与</a>');                            
+                        }
+                    } else {
+                        $('#ptgxbysjyzk_survey').html(dataValue);
+                    }
+                }
+            });
+        }
+
+        /**
+         * 职业发展调查问卷
+         *
+         * @param id     符合问卷条件的档案ID
+         * @param showTc 是否显示弹层
+         * @param from   请求来源
+         */
+        function ptgxbyszyfzSurvey(id,showTc,from) {
+            $.ajax({
+                url:'/archive/survey/zyfz/show.action',
+                type:'POST',
+                dataType: 'html',
+                data:{
+                    from:from,
+                    id:id
+                },
+                success:function(dataValue) {
+                    if (showTc) {
+                        $("#surveyPicInfo").hide();
+                        layer.open({
+                            type: 1,
+                            title: false,
+                            area: ['1000px', '650px'],
+                            closeBtn: false,
+                            shadeClose: false,
+                            skin: 'zydc_layer',
+                            content: '<div id="vote_zyfz_survey" data-id="'+id+'">'+dataValue+'</div>'
+                        });
+                        if(position =='pc_xlbab'){
+                            $("#surveyPicInfo").addClass('vote_bg_lxhjy').show()
+                                .children('a').eq(0).attr('href','https://my.chsi.com.cn/archive/survey/zyfz/index.action?from=archive-xlbab-banner').text('高校毕业生职业发展调查问卷');
+                        }
+                    }else{
+                        $("#surveyPicInfo").addClass('vote_bg_lxhjy').show()
+                            .children('a').eq(0).text('高校毕业生职业发展调查问卷');
+                        $('#ptgxbysjyzk_survey').html(dataValue);
+                        
+                    }
+                }
+            });
+        }
+
+        /**
+         * 就业期望调查问卷
+         *
+         * @param id     符合问卷条件的档案ID
+         * @param showTc 是否显示弹层
+         * @param from   请求来源
+         */
+        function ptgxbysSurvey(id,showTc,from,type) {
+            $.ajax({
+                url:'/archive/survey/ptgx/show.action',
+                type:'POST',
+                data:{
+                    id:id,
+                    from:from,
+                    type:type
+                },
+                success:function(dataValue) {
+                    if ( showTc ) {
+                        layer.open({
+                            type: 1,
+                            title: false,
+                            area: ['1000px', '606px'],
+                            closeBtn: false,
+                            shadeClose: false,
+                            skin: 'zydc_layer',
+                            content: '<div id="vote_jyqw_survey" data-id="'+id+'">'+dataValue+'</div>'
+                        });
+                    }else{
+                        $("#surveyPicInfo").show()
+                            .children('a').eq(0).text('2020届高校毕业生就业进展状况调查');
+                        $('#ptgxbysjyzk_survey').html(dataValue).show();
+                    }
+                }
+            });
+        }
+
+        /**
+         * 普通高校校园学习状况调查
+         *
+         * @param id     符合问卷条件的档案ID
+         * @param showTc 是否显示弹层
+         * @param from   请求来源
+         */
+        function ptgxxyxxzkSurvey(id,showTc,from) {
+            $.ajax({
+                url:'/archive/survey/campus/show.action',
+                type:'POST',
+                data:{
+                    xjId:id,
+                    from:from
+                },
+                success:function(dataValue) {
+                    if (showTc) {
+                        layer.open({
+                            type: 1,
+                            title: false,
+                            area: ['1000px', '606px'],
+                            closeBtn: false,
+                            shadeClose: false,
+                            skin: 'zydc_layer',
+                            content: '<div id="vote_zxs_survey">'+dataValue+'</div>'
+                        });
+                    }else{
+                        $("#surveyPicInfo").addClass('vote_bg_zxs').show();
+                        $('#ptgxbysjyzk_survey').html(dataValue);
+                    }
+                }
+            });
+        }
+        /**
+         * 就业跟踪调查问卷
+         *
+         * @param id     满足问卷条件的档案ID
+         * @param showTc 是否显示弹层
+         * @param from   请求来源标识
+         */
+        function ptgxjygzSurvey(id,showTc,from) {
+            $.ajax({
+                url:'/archive/survey/lxjy/show.action',
+                type:'get',
+                data:{
+                    id:id,
+                    from:from
+                },
+                success:function(dataValue) {
+                    if (showTc) {
+                        $("#surveyPicInfo").hide();
+                        if(dataValue.indexOf('showSurveyFlase')>-1){ //不显示问卷
+                            return false;
+                        }
+                        layer.open({
+                            type: 1,
+                            title: false,
+                            area: ['1000px', '650px'],
+                            closeBtn: false,
+                            shadeClose: false,
+                            skin: 'zydc_layer',
+                            content: '<div id="ptgxbyslxjy_survey">'+dataValue+'</div>'
+                        });
+                        if(position =='pc_xlbab'){
+                            $("#surveyPicInfo").addClass('vote_bg_lxhjy').show()
+                                .children('a').eq(0).attr('href','https://my.chsi.com.cn/archive/survey/lxjy/index.action?from=archive-xlbab-banner').text('就业状况调查');
+                        }
+                    }else{
+                        $("#surveyPicInfo").addClass('vote_bg_lxhjy').show()
+                            .children('a').eq(0).text('就业状况调查');
+                        $('#ptgxbysjyzk_survey').html(dataValue).show();
+                    }
+                }
+            });
+        }
+        
+        
+        /**
+         * 就业跟踪调查问卷
+         *
+         * @param id     满足问卷条件的档案ID
+         * @param showTc 是否显示弹层
+         * @param from   请求来源标识
+         */
+        function gxbysgzSurvey(id,showTc,from) {
+            $.ajax({
+                url:'/archive/survey/gxbysgz/show.action',
+                type:'get',
+                data:{
+                    id:id,
+                    from:from
+                },
+                success:function(dataValue) {
+                    if (showTc) {
+                        $("#surveyPicInfo").hide();
+                        layer.open({
+                            type: 1,
+                            title: false,
+                            area: ['1000px', '650px'],
+                            closeBtn: false,
+                            shadeClose: false,
+                            skin: 'zydc_layer',
+                            content: '<div id="ptgxbyslxjy_survey">'+dataValue+'</div>'
+                        });
+                    }else{
+                        $("#surveyPicInfo").addClass('vote_bg_lxhjy').show()
+                            .children('a').eq(0).text('高校毕业生跟踪调查');
+                        $('#ptgxbysjyzk_survey').html(dataValue).show();
+                    }
+                }
+            });
+        }
+    </script>
+
+<div class="xj_top">
+    <span class='find_xj'>您一共有<span class="xj_num"> 1 </span>个学籍</span>
+    还有学籍没有显示出来？ <a href='###' onclick="bindxjreport();return false;">尝试绑定学籍</a>　|　<a href='http://www.chsi.com.cn/help/cxfw.jsp' target="_blank">学籍查询范围</a>
+</div>
+
+    <div class="clearfix">
+        <div class="m-left xj-left main-block border-shadow ">
+            <div class="mb-title"><h2>大专-重庆足下软件学院-网络运营</h2></div>
+            <span class='mb-title-a'><i class="iconfont">&#xe685;</i><a href="/archive/bab/xj/show.action?trnd=96588565329550477076799655009093#zxyz_1" onmousedown="zhugeFun.gdjyToZxyz('学籍','pc');">查看该学籍的在线验证报告</a></span>
+            <div class="xj-l-m clearfix">
+                <div class="xj-m-left">
+                    <div class="pic">
+                            <img src="img/692A3FFAC0764A8989542D90B5C51E75.jpg" align="absmiddle" width="120" height="160" alt="录取照片"/>
+                    </div>
+                    <p>录取照片</p>
+                    <div class="pic">
+                            <img id="1" src="img/692A3FFAC0764A8989542D90B5C51E75.jpg" align="absmiddle" width="120" height="160" alt="学历照片"/>
+                    <div id="pic_tips_1"></div>
+                    </div>
+                    <p>学历照片</p>                   
+                </div>
+                <div class="xj-m-r">
+                    <ul class="address">
+						<li>
+							<ul class="address-text">
+								<li><b>姓名</b></li>
+								<li>郝耀华</li>
+							</ul>
+						</li>
+						<li>
+							<ul class="address-text">
+								<li><b>性别</b></li>
+								<li>男</li>
+							</ul>
+						</li>
+						<li>
+							<ul class="address-text">
+								<li><b>出生年月 </b></li>
+								<li>1999年07月11日</li>
+							</ul>
+						</li>
+						<li>
+							<ul class="address-text">
+								<li><b>民族 </b></li>
+								<li>汉</li>
+							</ul>
+						</li>
+						<li>
+							<ul class="address-text">
+								<li><b>证件号码 </b></li>
+								<li>513023199907112413</li>
+							</ul>
+						</li>
+						<li>
+							<ul class="address-text">
+								<li><b>层次 </b></li>
+								<li>专科</li>
+							</ul>
+						</li>
+						<li>
+							<ul class="address-text">
+								<li><b>专业 </b></li>
+								<li>网络运营</li>
+							</ul>
+						</li>
+						<li>
+							<ul class="address-text">
+								<li><b>学制 </b></li>
+								<li>3年</li>
+							</ul>
+						</li>
+						<li>
+							<ul class="address-text">
+								<li><b>系所 </b></li>
+								<li>信息工程系</li>
+							</ul>
+						</li>
+						<li>
+							<ul class="address-text">
+								<li><b>班级 </b></li>
+								<li>17046</li>
+							</ul>
+						</li>
+						<li>
+							<ul class="address-text">
+								<li><b>入学时间 </b></li>
+								<li>2017年09月01日</li>
+							</ul>
+						</li>
+						<li>
+							<ul class="address-text">
+								<li><b>离校日期 </b></li>
+								<li>2020年06月30日</li>
+							</ul>
+						</li>
+						<li>
+							<ul class="address-text">
+								<li><b>学籍状态 </b></li>
+								<li>不在籍（毕业）</li>
+							</ul>
+						</li>
+					</ul>
+                </div>
+                <div class="clearFloat">&nbsp;</div>
+            </div>
+            <div id="pic_query_result_1"></div>
+            
+                
+            
+        </div>
+        <div class="m-right border-shadow " id="myd_n51j6jjinitcn9dm">
+        </div>
+        <div class="clearFloat">&nbsp;</div>
+        <script>
+            $(function(){
+                xjmydtj("n51j6jjinitcn9dm");
+            });
+            photoQueryCheck("n51j6jjinitcn9dm",'xj',"1");
+        </script>
+    </div>
+
+
+
+<script>
+    function xjmydtj( archiveId ) {
+        var $myd = $('#myd_'+archiveId );
+        $.ajax({
+            url:'/archive/survey/myd/xj/show.action',
+            type:'POST',
+            data:{
+                xjid:archiveId,
+            },
+            beforeSend:function(){
+                $myd.height(parseInt($myd.prev().height())+20).html("<div id='loading-block'><img src='https://t1.chei.com.cn/common/images/loading.gif' />正在加载中</div>");
+            },
+            success:function(dataValue) {
+                $myd.html(dataValue);
+            }
+        });
+    }
+</script>
+
+
+<div id="ptgxbysjyzkSurvey" class="margint20">
+    <div class='my-survery border-shadow xj-survery' id='ptgxbysjyzk_survey' style='display: none;'>
+    </div>
+</div>
+
+<!--b谈层测试页面-->
+<div class="modal fade" id="bPlan" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static">
+    <div class="modal-dialog zydc-modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×
+                </button>
+                <h4 class="modal-title"></h4>
+            </div>
+            <div class="modal-body">
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" 
+                        aria-hidden="true">×
+                </button>
+                <h4 class="modal-title" id="myModalLabel"></h4>
+            </div>
+            <div class="modal-body">
+            </div>
+        </div>
+    </div>
+</div>
+<input type="hidden"  id="urlTrnd" value="96588565329550477076799655009093"/>
+<script>
+$(window).load(function() {
+     //设置右侧
+    setTimeout(function(){
+        setRight();
+    },200);
+    zhugeFun.pagePv('高等教育-学籍信息','pc');
+});
+function setRight(){
+    //设置说明的width，当只有一条数据且正在审核时，说明文字需要通栏显示
+    if($('.m-right').length==0){
+        $('.sm-text').width('100%');
+    }
+    //设置右侧高度
+    $('.m-right').each(function(index,ele){
+        var $this  = $(ele),
+            $left = $this.parent().find('.m-left'),
+            leftH = $left.height(),
+            height = $this.height() || 480;
+        height = height>leftH ? height : leftH;
+        $this.height(height+20);
+        $left.height(height);
+    });
+}
+/*检查照片评价层*/
+function  appraisalFromCookie(tb){
+    var cookieValue =  getCookie("appraisal_"+tb);
+    if( cookieValue != "noAppraisal" ){
+        $('.main-block').eq(tb).find('.appraisal').click();
+    }
+}
+/*评价照片层的取消按钮事件*/
+function  addAppraisalCookie(tb){
+    var cookieName = "appraisal_"+tb;
+    addCookie(cookieName,"noAppraisal");
+    $('#myModal').modal('hide')
+}
+/*修改图片校对结论*/
+function  collateAgain(tbCount){
+   $("#collate_again_"+tbCount).hide();
+   $("#collate_again_1_"+tbCount).show();
+   $("#collate_again_2_"+tbCount).show();
+   return false;
+}   
+/*校对结论生效*/
+function  zpjdsxInfo(tbCount){
+   $("#collate_again_"+tbCount).hide();
+   $("#zpjdsx_"+tbCount).html("校对结论已生效。");
+   $("#zpjdsx_"+tbCount).show();
+   return false;
+} 
+/*学历照片评价*/
+function appraisalPhoto(xjid){
+    var id = xjid;
+    var tb = $("#tb_"+id).val();
+    $.post(
+        '/archive/gdjy/zp/pj/photoAppraisal.action',
+        {'archiveId':id,'tb':tb},
+        function (html) {
+            $("#myModal .modal-title").html("学历照片评价");
+            $("#myModal .modal-body").html(html);
+            $('#myModal').modal('show');
+        }
+    );
+}
+/*学历照片正确*/
+function updatezpinfo(zpformid){
+   $("#myModal .modal-body").html("<div class='collate_tip01'>提示：学历照片校对结论将在24小时后正式提交至就读院校学籍管理部门；<br />　　　正式提交前校对结论可以修改；<br />　　　正式提交后若仍需修改，请联系就读院校学籍管理部门。</div><div class='center' style='margin:10px;'><input type='button' class='button4' onclick='updatezpjdxx("+zpxxformid+")' value='确定' />  <input type='button' class='button4' onclick='closedialog()' value='返回' /></div>");
+    var zpxxformid = zpformid;
+    $("#collate_"+zpxxformid).find(".zpxxCollateStatus").val("1");
+    var ops = {
+        type:'post',
+        url:'/archive/gdjy/zp/jd/editzpjdxx.action',
+        dataType:'html',
+        success:function(data){
+            $("#myModal .modal-title").html("学历照片完全正确"); 
+            $("#myModal .modal-body").html(data);
+            $('#myModal').modal('show');
+        }
+    };
+    $("#collate_"+zpxxformid).ajaxSubmit (ops);
+    //$("#dialog").dialog('option', 'buttons', null);
+}
+/*学历照片错误*/
+function editzpjdxx(zpformid){
+    var zpxxformid = zpformid;
+    $("#collate_"+zpxxformid).find(".zpxxCollateStatus").val("0");
+    var ops = {
+        type:'post',
+        url:'/archive/gdjy/zp/jd/editzpjdxx.action',
+        dataType:'html',
+        success:function(data){
+            $("#myModal .modal-title").html("学历照片错误原因"); 
+            $("#myModal .modal-body").html(data);
+            $('#myModal').modal('show');
+        }
+    };
+    $("#collate_"+zpxxformid).ajaxSubmit (ops);
+   //$("#dialog").dialog('option', 'buttons', null);
+}
+/*更新图片校对信息*/
+function updatezpjdxx(tb){
+    var zpxxformid = tb+1;
+    var trnd = $("#urlTrnd").val();
+    $("#check_collate_csrf_"+zpxxformid).val('d93d999e6b7a128c1d2531a1fb8babf7')
+    $("#collate_"+zpxxformid).attr('action','/archive/gdjy/zp/jd/updatezpjdxx.action');
+    $("#collate_"+zpxxformid).submit();
+}
+//绑定学籍
+function bindxjreport() {
+    $.ajax({
+        type: 'GET',
+        data: {
+
+        },
+        url: '/archive/gdjy/xj/showbind.action',
+        dataType: 'html',
+        success: function(data) {
+            $("#myModal .modal-title").html("学籍绑定");
+            $("#myModal .modal-body").html(data);
+            $('#myModal').modal('show');
+        }
+    });
+}
+function addCookie(name,value){
+  var cookieString=name+"="+escape(value);
+  document.cookie=cookieString;
+  document.cookie.setSecure=true;//只允许在https环境下使用cookie
+} 
+function getCookie(name){
+    var strCookie=document.cookie;
+    var arrCookie=strCookie.split("; ");
+    for(var i=0;i<arrCookie.length;i++){
+        var arr=arrCookie[i].split("=");
+        if(arr[0]==name)return arr[1];
+    }
+    return "";
+} 
+function loadbinddialog(){
+    //没有学籍信息，这是一个弹层
+    var temp  ='<p style="text-align:left">系统没有找到您的在校生学籍信息，有可能是因为您注册时填写的姓名和证件号码两项与学校上报的学籍注册数据不相同导致的。<br/><br/></p>';
+    temp +='<p style="text-align:left">1、查看您注册时填写的姓名和证件号码信息&nbsp;<a href="https://account.chsi.com.cn/account/account!show" target="_blank" class="color5">点击查看</a><br/></p>';
+    temp +='<p style="text-align:left">2、姓名和证件号码无误，我还有学籍没显示出来&nbsp;<a href="###" aria-hidden="true" onclick=" bindxjreport(); return false;" class="color5">找找看？</a><br/><br/></p>';
+    temp +='<div class="modal-btn" style="margin-top:40px;"><a class="green-btn mid-btn" data-dismiss="modal" aria-hidden="true" >关闭</a></div>';
+
+    $("#myModal .modal-title").html("没有学籍");
+    $("#myModal .modal-body").html(temp);
+    $('#myModal').modal('show');
+}
+//解决2个谈层，关闭一个，就业调查的滚动条不管用问题	
+$('.modal').on('hidden.bs.modal', function () {
+    if($("#bPlan").hasClass('in')){
+        $("body").addClass("modal-open");
+    } 
+})
+// 初始化没有学籍的弹层开始
+
+
+    $(function(){   
+       //自动检测出照片评价层
+        var tb = 0;
+        var countSize = $('.main-block').size();
+        if( tb >= countSize ){
+            tb = 0;
+        }
+        appraisalFromCookie(tb);
+    })
+
+
+</script>
+            </div>
+        </div>
+    </div>
+    
+
+
+
+
+
+
+
+<div class="footer">
+	<a href="http://www.chsi.com.cn/" target="_blank">学信网</a>　|　<a href="/archive/help/index.action" target="_blank">帮助中心</a>　|　Copyright © 2003-2020 学信网 All Rights Reserved
+    <div id="loader"></div> 
+<script type="text/javascript" src='https://t1.chei.com.cn/common/plugins/validation/jquery.validate.min.js'></script>
+<script type="text/javascript" src='https://t2.chei.com.cn/archive/js/jquery/jquery.form.js'></script>
+<script type="text/javascript" src='https://t1.chei.com.cn/common/bootstrap3.3.5/js/bootstrap.min.js'></script>
+<script type="text/javascript" src='https://t1.chei.com.cn/common/bootstrap-datetimepicker-v3/bootstrap-datetimepicker.min.js'></script>
+<script src='https://t2.chei.com.cn/archive/js/common/ie-prompt.min.js'></script>  
+<link rel="stylesheet" href='https://t2.chei.com.cn/archive/js/webuploader/webuploader.css' />
+<script src='https://t4.chei.com.cn/archive/js/webuploader/webuploader.js'></script> 
+
+</body> 
+</html>

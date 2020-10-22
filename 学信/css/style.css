@@ -1,0 +1,24 @@
+ul.address {
+    margin-top: 2em;
+    border-top: 1px solid #AFAFAF;
+    padding-top: 0.5em;
+}
+ul.address li {
+    display: block;
+}
+ul.address li ul.address-text li {
+    display: inline-block;
+    font-size: 1.1em;
+    color: #666;
+    margin-top: 0.3em;
+	font-weight: 100;
+}
+ul.address li ul.address-text li:nth-child(1){
+	width: 25%;
+}
+ul.address li ul.address-text li a {
+    color: #666;
+	text-decoration:none;
+}
+ul.address li ul.address-text li a:hover{
+    color: #0FF;
