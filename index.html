@@ -7,6 +7,7 @@
     <meta name="keywords" content="学信档案，高等教育信息，学籍学历，图片校对"> 
     <meta name="description" content="“学信档案”是中国高等教育学生信息网（简称“学信网”）各类学生个人信息档案的总称，涉及全国高等教育学生信息数据库中各类学生的学籍、学历、招生录取、助学贷款等信息。">
     <meta http-equiv="x-dns-prefetch-control" content="on">
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
     <link rel="dns-prefetch" href="//t1.chei.com.cn">
     <link rel="dns-prefetch" href="//t2.chei.com.cn">
     <link rel="dns-prefetch" href="//t3.chei.com.cn">
@@ -361,69 +362,4 @@ var zhugeFun ={
             <div class="abtn">
                 
                     <a class="login-btn" href="/archive/index.action">登录学信档案</a>
-                    <a class="register-btn" href="https://account.chsi.com.cn/account/preregister.action?from=archive" target="_blank">注册学信网账号</a>
-                
-            </div>
-            
-
-
-
-
-
-
-
-<div class="footer">
-	<a href="http://www.chsi.com.cn/" target="_blank">学信网</a>　|　<a href="/archive/help/index.action" target="_blank">帮助中心</a>　|　Copyright © 2003-2020 学信网 All Rights Reserved
-        </div>
-    </div>
-</div> 
-<script type="text/javascript" src='https://t1.chei.com.cn/common/jquery/1.9.1/jquery.min.js'></script>
-<script src='https://t2.chei.com.cn/archive/js/common/ie-prompt.min.js'></script>
-<script type="text/javascript" src='https://t1.chei.com.cn/common/plugins/fullpage/fullpage.min.js'></script>
-<script type="text/javascript" src='https://t1.chei.com.cn/common/wap/js/wap.min.js'></script>
-<script>
-$(function(){
-    zhugeFun.init(true); 
-    $('.page1').addClass('part-animation');
-    var flag = true;
-    if( navigator.appName== "Microsoft Internet Explorer"){
-        var ie = navigator.appVersion.split(";")[1].replace(/[ ]/g,"");
-        //小于ie10
-        if(ie.indexOf('MSIE')!=-1){
-            ie = parseInt(ie.substring(4));
-            if(ie<=9){
-                flag = false;
-            }
-        }
-    }
-    if(flag && !wapFn()){
-        $('#fullpage').fullpage({
-            anchors:['top','gdjy','txjd','zxyz','xlycj','hzsq','dctp','ncss'],
-            sectionsColor: ['#fff', '#fff', '#f7f7f7', '#fff', '#f7f7f7' , '#fff','#f7f7f7', '#fff'],
-            menu: '#menu',
-            onLeave: function(index, nextIndex, direction){
-                $('.page'+index).removeClass('part-animation');
-            },
-            afterLoad: function(anchorLink, index){
-                $('.page'+index).addClass('part-animation');
-                $('#menu a').eq(index-1).addClass('active');
-                if(index==8){
-                    if( $(window).height()<948){
-                         $('.page8').children('.fp-tableCell').css({
-                            'display':'block',
-                            'overflow-y': 'scroll'
-                        }).animate({scrollTop:0},300);
-                    }else{
-                        $('.page8').children('.fp-tableCell').css({
-                            'display':'table-cell',
-                            'overflow-y': 'none'
-                        })  
-                    }                    
-                }
-            }
-        });
-    }
-})  
-</script>
-</body> 
-</html>
+                    
