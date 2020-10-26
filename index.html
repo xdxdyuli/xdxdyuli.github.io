@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html> 
+<head> 
+    <meta charset="UTF-8"> 
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"> 
+    <title>学信档案</title> 
+    <meta name="keywords" content="学信档案，高等教育信息，学籍学历，图片校对"> 
+    <meta name="description" content="“学信档案”是中国高等教育学生信息网（简称“学信网”）各类学生个人信息档案的总称，涉及全国高等教育学生信息数据库中各类学生的学籍、学历、招生录取、助学贷款等信息。">
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+    <link rel="dns-prefetch" href="//t1.chei.com.cn">
+    <link rel="dns-prefetch" href="//t2.chei.com.cn">
+    <link rel="dns-prefetch" href="//t3.chei.com.cn">
+    <link rel="dns-prefetch" href="//t4.chei.com.cn">
+    <link rel="dns-prefetch" href="//ssl.google-analytics.com">
+    <link href="https://t1.chei.com.cn/archive/favicon.ico" rel="shortcut icon"> 
+    <link rel="stylesheet" href='https://t1.chei.com.cn/common/plugins/fullpage/fullpage.min.css' />
+    <link rel="stylesheet" href="https://t3.chei.com.cn/archive/css/custom/base.css?20191223" />
+    <link rel="stylesheet" href="https://t4.chei.com.cn/archive/css/custom/index.css?20191223" />
+    <script type="text/javascript" src='https://t1.chei.com.cn/common/zhuge/zhuge-1.0.0.js'></script>
+    
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-100524-5"></script>
+<script>
+// 放在ga.jsp 中
+function gaTrackerOutboundLink(ele,eventCategory,eventAction,eventLabel){
+    gtag('event', eventAction, {
+      'event_category': eventCategory,
+      'event_label': eventLabel
+    });
+    return true;
+}
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'UA-100524-5', {'sample_rate': 1});
+
+// 诸葛统计代码
+var zhugeFun ={
+    init:function(flag){
+        var OpenautoTrack = typeof flag != 'undefined' ? flag : false; //是否开启全埋点
+        if(!flag){
+           var _url = window.location.href;
+           if(_url.indexOf('/archive/index')>-1 || _url.indexOf('archive/wap/index')>-1){//pc、wap首页
+                OpenautoTrack = true;
+            }
+        }            
+        window.zhuge.load('0d76434d9bb94abfaa16e1d5a3d82b52', { //配置应用的AppKey
+            autoTrack: OpenautoTrack
+        });
+    },
+    votePv:function(name,from,type){
+        // 问卷浏览量
+        // name string  问卷名称
+        // from string 来源
+        // type string 类型，就业还是学职
+        zhuge.track('浏览问卷', {
+           '问卷名称': name,
+           '访问来源': from,
+           '问卷类型': type
+        });
+    },
+    voteClick:function(name,from,type){
+        // 问卷点击量
+        // name string  问卷名称
+        // from string 来源
+        // type string 类型，就业还是学职
+        zhuge.track('点击问卷', {
+           '问卷名称': name,
+           '访问来源': from,
+           '问卷类型': type
+        });
+    },
+    voteSubmit:function(name,from,type,time){
+        // 问卷提交量
+        // name string  问卷名称
+        // from string 来源
+        // type string 类型，就业还是学职
+        // time num 完成问卷用时
+        zhuge.track('提交问卷', {
+           '问卷名称': name,
+           '访问来源': from,
+           '问卷类型': type,
+           '问卷用时': time
+        });
+    },
+    voteClickSubmit:function(name,from,type){
+        // 问卷前台校验通过，还未传后台前的提交量
+        // name string  问卷名称
+        // from string 来源
+        // type string 类型，就业还是学职
+        zhuge.track('点提交按钮', {
+           '问卷名称': name,
+           '访问来源': from,
+           '问卷类型': type
+        });
+    },
+    //去往新职业
+    goNcss:function(from,to){
+        zhuge.track('点击新职业', {
+           '来源': from,
+           '去向': to
+        });
+    },
+    //去往学职
+    goXz:function(from,to){
+        zhuge.track('点击学职', {
+           '来源': from,
+           '去向': to
+        });
+    },
+    pagePv:function(name,platform,hasData){//各类页面访问量
+        if(typeof hasData != 'undefined'){
+            zhuge.track('主要页面访问量',{
+                '名称':name,
+                '设备信息':platform,
+                '是否有数据':hasData
+            });
+        }else{
+            zhuge.track('主要页面访问量', {'名称':name,'设备信息':platform});
+        }           
+    },
+    gdjyToZxyz:function(type,platform){//从高等教育点击到在线验证
+        zhuge.track('从高等教育点击到在线验证',{
+            '类型':type,
+            '设备信息':platform
+        });
+    },
+    xjxlMydClick:function(type){//学籍学历右侧的满意度推荐按钮点击情况
+        zhuge.track('从高等教育点击满意度',{
+            '类型':type
+        });
+    },
+    byqxClick:function(platform){//毕业去向提交成功
+        zhuge.track('毕业去向提交成功',{
+            '设备信息':platform
+        });
+    },
+    zxysSqClick:function(type){//在线验证点击申请
+        zhuge.track('申请在线验证报告',{
+            '类型':type //学籍、学历
+        });
+    },
+    gjhzSendStep:function(step){//国际合作的发送报告流程
+        switch(step){
+            case '1':zhuge.track('国际合作发送报告-选择机构和大学');break;
+            case '2':zhuge.track('国际合作发送报告-选择报告');break;
+            case '3':zhuge.track('国际合作发送报告-确认报告');break;
+            case '4':zhuge.track('国际合作发送报告-点击发送');break;
+        }
+    },
+    dctpIndexClick:function(name,platform){
+        zhuge.track('调查投票首页点击事件',{
+            '点击区域':name, //学籍、学历
+            '设备信息':platform
+        });
+    }
+}
+</script>
+</head> 
+<!–[if IE 9]>
+<style>
+ .index-part1 .part1-person{transform:translate(0,0) rotate(0deg) scale(1)\9\0;;}
+ .index-part3 .part3-wz{transform:scale(1)\9\0;;}
+ .index-part2 .part2-right{transform:scale(1)\9\0;;}
+ .index-part4 .part4-r{
+    transform:scale(1)\9\0;
+}
+.index-part4 .part4-line{
+    opacity:1\9\0;
+    transform:translate(0)\9\0;
+}
+.index-part5 .part52{ transform:scale(1)\9\0;}
+</style>
+<![endif]–>
+<style>
+#menu { position: fixed; right: 20px; top: 50%; width: 140px; margin: -160px 0 0; padding: 0; list-style-type: none; z-index: 70;opacity: 0.75}
+#menu li { margin-top: 10px; font: 14px "Microsoft Yahei";}
+#menu a { display: block; padding: 10px 0;    background-color: #eaf1f7;color: #4b6e91; text-align: center; text-decoration: none;}
+#menu a.active { color: #fff; background-color: #4295e8;}
+
+.right,.index-part3 .right{margin-right:50px;}
+.index-part5 .right{margin-right: 110px;}
+.index-part7{min-height: 450px}
+.index-part7 .right{margin-right: 0;height: 450px;}
+.index-part8{height: 238px;}
+.index-part7 .index-block{height: 420px;}
+</style>
+<body>
+<div id='fullpage'>
+    <ul id="menu">
+        <li data-menuanchor="page1"><a href="#top" class="active">TOP</a></li>
+        <li data-menuanchor="page2"><a href="#gdjy">高等教育信息</a></li>
+        <li data-menuanchor="page3"><a href="#txjd">图像校对</a></li>
+        <li data-menuanchor="page4"><a href="#zxyz">在线验证报告</a></li>
+        <li data-menuanchor="page5"><a href="#xlycj">学历认证与成绩验证</a></li>
+        <li data-menuanchor="page6"><a href="#hzsq">国际合作申请</a></li>
+        <li data-menuanchor="page7"><a href="#dctp">调查/投票</a></li>
+        <li data-menuanchor="page8"><a href="#ncss">就业</a></li>
+        <li><a href="//kl.chsi.com.cn/robot/index.action?system=my" target="_blank">学信机器人</a></li>
+    </ul>
+    <div class='section page1'>
+        <div class='index-header'>
+            <div class="index-block">
+                <div class='logo'><h1>学信档案</h1></div>
+                <ul class='index-right' v-if="showMenu">
+                    <li><a href="http://www.chsi.com.cn/" target="_blank">学信网</a></li>
+                    <li><a href="/archive/help/index.action" target="_blank">帮助中心</a></li>
+                    <li><a href="http://www.chsi.com.cn/about/contact.shtml" target="_blank">联系我们</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="index-part1">
+            <div class='index-block'>
+                <div class='index-title'></div>
+                <div class="index-p1-img abtn">
+                    
+                        <a class="login-btn" href="login.html">登录学信档案</a>
+                        <a class="register-btn" href="https://account.chsi.com.cn/account/preregister.action?from=archive" target="_blank">注册学信网账号</a>
+                    
+                </div>
+                <div class="part1-person"></div>
+            </div>
+        </div>
+    </div>
+    <div class='section page2'>
+        <div class="index-part3 clearfix">
+            <div class='index-block'>
+                <div class="left">
+                    <div class="part3-wz"></div>
+                </div>
+                <div class="right">
+                    <h4><a href="/archive/gdjy/xj/show.action">免费查看学籍、学历信息</a></h4>
+                    <p>实名注册后即可免费查看本人的高等教育学籍、<br/>学历、考研等信息。</p>
+                </div>
+                <div class='clearFloat'>&nbsp;</div>
+            </div>  
+        </div>
+    </div>
+    <div class='section page3' >
+        <div class="index-part2 clearfix">
+            <div class='index-block'>
+                <div class="left">
+                    <h4><a href="/archive/gdjy/xj/show.action">校对本人学历照片</a></h4>
+                    <p>学历照片很重要，及时校对很有必要。</p>
+                </div>
+                <div class="right">
+                    <div class="part2-round"></div>
+                    <div class="part2-right"></div>
+                </div>
+                <div class='clearFloat'>&nbsp;</div>
+            </div>
+        </div>
+    </div>
+    <div class='section page4'>
+        <div class="index-part4 clearfix">
+            <div class='index-block'>
+                <div class="left">
+                    <div class="part4-r part4-r1"></div>
+                    <div class="part4-line part4-l1"></div>
+                    <div class="part4-r part4-r2"></div>
+                    <div class="part4-line part4-l2"></div>
+                    <div class="part4-r part4-r3"></div>
+                    <div class="part4-line part4-l3"></div>
+                    <div class="part4-r part4-r4"></div>
+                    <div class="part4-line part4-l4"></div>
+                    <div class="part4-r part4-r5"></div>
+                    <div class="part4-line part4-l5"></div>
+                    <div class="part4-r part4-r6"></div>
+                    <div class="part4-line part4-l6"></div>
+                    <div class="part4-r part4-r7"></div>
+                    <div class="part4-line part4-l7"></div>
+                </div>
+                <div class="right" style="margin-right:0">
+                    <h4><a href="/archive/bab/index.action">免费申请、查看学籍学历在线验证报告</a></h4>
+                    <p><span class='spot-blue'>&nbsp;</span>报告使用场景：</p>
+                    <p>求职招聘、派遣接收、升学(考研、专升本)、出国留学、</p>
+                    <p>干部任免、职称评定、信用评估等。</p>
+                    <p><span class='spot-yellow'>&nbsp;</span>报告特点：</p>
+                    <p>多次免费验证、多重防伪、多次打印。</p>
+                </div>
+                <div class='clearFloat'>&nbsp;</div>
+            </div>
+        </div>
+    </div>
+    <div class='section page5'>
+        <div class="index-part5 clearfix">
+            <div class='index-block'>   
+                <div class="left" style="width: 520px;">
+                    <h4><a href="/archive/rzbg/index.action">查看或绑定学历认证与成绩验证报告</a></h4>
+                    <p><span class='spot-blue'>&nbsp;</span>《中国高等教育学历认证报告》</p>
+                    <p><span class='spot-skyblue'>&nbsp;</span>《中国中等教育学历验证报告》</p>
+                    <p><span class='spot-yellow'>&nbsp;</span>《中国高等学校学生成绩验证报告》</p>
+                    <p><span class='spot-orange'>&nbsp;</span>《普通高等学校招生全国统一考试成绩验证报告》 </p>
+                    <p><span class='spot-green'>&nbsp;</span>《中国中等学校学生成绩验证报告》 </p>
+                    <p><span class='spot-red'>&nbsp;</span>《普通高中学业水平考试（会考）成绩验证报告》</p>
+                </div>
+                <div class="right">
+                    <div class="part51"></div>
+                    <div class="part52"></div>
+                </div>
+                <div class='clearFloat'>&nbsp;</div>
+            </div>
+        </div>
+    </div>
+    <div class='section page6'>
+        <div class="index-part6 clearfix">
+            <div class='index-block'>
+                <div class="left">
+                    <div class="dot dot1"></div>
+                    <div class="dot dot2"></div>
+                </div>
+                <div class="right">
+                    <h4><a href="/archive/gjhz/index.action">向所申请的国外大学发送报告</a></h4>
+                    <p>合作机构：</p>
+                    <p><span class='spot-blue'>&nbsp;</span>美国大学网ApplyWeb</p>
+                    <p><span class='spot-green'>&nbsp;</span>美国Parchment</p>
+                    <p><span class='spot-yellow'>&nbsp;</span>美国学生信息中心NSC</p>
+                    <p><span class='spot-skyblue'>&nbsp;</span>爱尔兰Digitary</p>
+                    <p><span class='spot-orange'>&nbsp;</span>荷兰DUO</p>
+                    <p><span class='spot-red'>&nbsp;</span>World Education Services (WES)</p>
+                </div>
+                <div class='clearFloat'>&nbsp;</div>
+            </div>
+        </div>
+    </div>
+    <div class='section page7'>
+        <div class="index-part7 clearfix">
+            <div class='index-block'>
+                <div class="left">
+                    <h4><a href="/archive/survey/index.action">参与调查问卷和投票</a></h4>
+                    <p><span class='spot-blue'>&nbsp;</span>对所读大学的优势专业进行投票推荐</p>
+                    <p><span class='spot-yellow'>&nbsp;</span>对就读大学和就读专业进行满意度的评价</p>
+                    <p><span class='spot-skyblue'>&nbsp;</span>对就业状况进行反馈</p>
+                </div>
+                <div class="right">
+                    <div class="checkbox"></div>
+                    <div class="pen"></div>
+                </div>
+                <div class='clearFloat'>&nbsp;</div>
+            </div>
+        </div> 
+    </div>
+    <div class='section page8'>
+        <div class="index-part9 clearfix">
+            <div class='index-block'>
+                <div class="left">
+                </div>
+                <div class="right">
+                    <h4><a href="http://www.ncss.cn" target="_blank">享受教育部大学生职业网（新职业）<br />的求职招聘服务</a></h4>
+                    <p><span class='spot-blue'>&nbsp;</span>更真实的“职位库”，为你量身推荐，与众不同、独一无二</p>
+                    <p><span class='spot-skyblue'>&nbsp;</span>更优质的“企业库”，由你徜徉梦想天空，官方独有标签加持</p>
+                    <p><span class='spot-yellow'>&nbsp;</span>更大型的“招聘会”，为你提供最多沟通机会，多部委、省市、高校联办</p>
+                    <p><span class='spot-orange'>&nbsp;</span>更独家的“师兄师姐去哪儿”，揭秘同学校同专业前辈们的就业方向</p>
+                    <p><span class='spot-green'>&nbsp;</span>更官方的“推荐指数”，为你评估与心仪企业的匹配度</p>
+                    <p><span class='spot-red'>&nbsp;</span>更接地气的“面试经验”，真实反映心仪职位的面试要点与实地体验</p>
+                </div>
+                <div class='clearFloat'>&nbsp;</div>
+            </div>
+        </div> 
+        <div class="index-part8 clearfix">
+            <h4>现在就开始使用学信档案</h4>
+            <div class="abtn">
+                
+                    <a class="login-btn" href="/archive/index.action">登录学信档案</a>
+                    <a class="register-btn" href="https://account.chsi.com.cn/account/preregister.action?from=archive" target="_blank">注册学信网账号</a>
+                
+            </div>
+            
+
+
+
+
+
+
+
+<div class="footer">
+	<a href="http://www.chsi.com.cn/" target="_blank">学信网</a>　|　<a href="/archive/help/index.action" target="_blank">帮助中心</a>　|　Copyright © 2003-2020 学信网 All Rights Reserved
+        </div>
+    </div>
+</div> 
+<script type="text/javascript" src='https://t1.chei.com.cn/common/jquery/1.9.1/jquery.min.js'></script>
+<script src='https://t2.chei.com.cn/archive/js/common/ie-prompt.min.js'></script>
+<script type="text/javascript" src='https://t1.chei.com.cn/common/plugins/fullpage/fullpage.min.js'></script>
+<script type="text/javascript" src='https://t1.chei.com.cn/common/wap/js/wap.min.js'></script>
+<script>
+$(function(){
+    zhugeFun.init(true); 
+    $('.page1').addClass('part-animation');
+    var flag = true;
+    if( navigator.appName== "Microsoft Internet Explorer"){
+        var ie = navigator.appVersion.split(";")[1].replace(/[ ]/g,"");
+        //小于ie10
+        if(ie.indexOf('MSIE')!=-1){
+            ie = parseInt(ie.substring(4));
+            if(ie<=9){
+                flag = false;
+            }
+        }
+    }
+    if(flag && !wapFn()){
+        $('#fullpage').fullpage({
+            anchors:['top','gdjy','txjd','zxyz','xlycj','hzsq','dctp','ncss'],
+            sectionsColor: ['#fff', '#fff', '#f7f7f7', '#fff', '#f7f7f7' , '#fff','#f7f7f7', '#fff'],
+            menu: '#menu',
+            onLeave: function(index, nextIndex, direction){
+                $('.page'+index).removeClass('part-animation');
+            },
+            afterLoad: function(anchorLink, index){
+                $('.page'+index).addClass('part-animation');
+                $('#menu a').eq(index-1).addClass('active');
+                if(index==8){
+                    if( $(window).height()<948){
+                         $('.page8').children('.fp-tableCell').css({
+                            'display':'block',
+                            'overflow-y': 'scroll'
+                        }).animate({scrollTop:0},300);
+                    }else{
+                        $('.page8').children('.fp-tableCell').css({
+                            'display':'table-cell',
+                            'overflow-y': 'none'
+                        })  
+                    }                    
+                }
+            }
+        });
+    }
+})  
+</script>
+</body> 
+</html>
